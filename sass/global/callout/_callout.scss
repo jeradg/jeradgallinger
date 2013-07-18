@@ -1,0 +1,53 @@
+/* Intro */
+$intro-background-color: desaturate( lighten( $color-1, 53% ), 80%);
+
+.callout {
+  position: relative;
+  width: 100%;
+  background-color: $main-background-color;
+  color: $main-background-color;
+  text-align: center;
+  .content {
+    padding: 1em;
+  }
+  h1 {
+    margin-top: .25em;
+    margin-bottom: ms( -2, 1em );
+    line-height: 1;
+    color: $color-2;
+    @media ( max-width: 300px ) {
+      font-size: ms( .5, 1em );
+    }
+    strong {
+      color: $color-1;
+      span {
+        color: black;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: ms( -1, 1em );
+    font: bold ms( .5, 1em ) $heading-font-family;
+    @media #{ $large } {
+      font-size: ms( 1.5, 1em );
+    }
+  }
+  strong,
+  a {
+    color: $color-2;
+  }
+  @media #{ $small } {
+    position: fixed;
+  }
+}
+
+.callout-inner {
+  position: absolute;
+  overflow: hidden;
+  top: .5em;
+  right: .5em;
+  bottom: .5em;
+  left: .5em;
+  border-radius: .5em;
+}

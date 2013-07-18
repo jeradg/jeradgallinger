@@ -1,0 +1,46 @@
+.intro {
+  position: relative;
+  background-color: $color-1;
+  background-image: url( '../img/jet-sky.jpg' );
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  @include box-shadow( 
+    inset 0 8px 10px -10px rgba( 0, 0, 0, 1 ),
+    inset 0 -8px 10px -10px rgba( 0, 0, 0, 1 ) 
+  );
+  @media #{ $small } {
+    background-attachment: fixed;
+  }
+}
+
+.intro-text {
+  // font-size: 
+  padding: 1em 0;
+  font-size: .7em;
+  line-height: 1.25;
+  @include text-shadow( 0 0 6px rgba( black, .6 ),
+                        0 0 18px rgba( black, .2 ) );
+  @media #{ $small } {
+    font-size: 1.2em;
+  }
+  @media #{ $medium } {
+    font-size: 1.7em;
+  }
+  @media #{ $large } {
+    font-size: 2.1em;
+  }
+}
+
+.hi {
+  margin-bottom: .25em;
+  font-size: 3.5em;
+}
+
+.i-am {
+  margin-bottom: .4em;
+  font-size: 1.7em;
+}
+
+// .i-love {
+// }

@@ -1,0 +1,11 @@
+.do {
+  .icons {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    @include icon-FontAwesome();
+    @media #{ $medium } {
+      font-size: 6em;
+    }
+  }
+}

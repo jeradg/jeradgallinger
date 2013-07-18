@@ -1,0 +1,35 @@
+/* Page nav */
+$page-nav-a-padding: ms( -2, $side-padding );
+$page-nav-color: $color-2;
+$page-nav-color-hover: $color-4;
+$page-nav-border: 2px solid white;
+
+.page-nav {
+  ul {
+    margin: 1em -$page-nav-a-padding;
+    border-top: $page-nav-border;
+    border-bottom: $page-nav-border;
+    text-align: center;
+    @media #{ $small } {
+      font-size: ms( .25, 1em );
+    }
+    @media #{ $large } {
+      font-size: ms( 1, 1em );
+    }
+    li { 
+      display: inline-block;
+      a {
+        display: inline-block;
+        padding: $page-nav-a-padding/2 $page-nav-a-padding;
+        font: bold 1em $heading-font-family;
+        line-height: 1;
+        color: $page-nav-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+          color: $page-nav-color-hover;
+        }
+      }
+    }
+  }
+}

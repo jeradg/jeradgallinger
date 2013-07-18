@@ -1,0 +1,51 @@
+.check {
+  ul {
+    margin: 1em 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    border-bottom: none;
+  }
+}
+
+.icon-github,
+.icon-twitter {
+  display: inline-block;
+  font-size: 4em;
+  @include icon-FontAwesome();
+  &:hover,
+  &:focus {
+    @include text-shadow( 0 1px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 2px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 3px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 4px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 5px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 5px 1px rgba( black, .3 ),
+                          0 5px 10px rgba( black, .4 ) );
+    @include transform( translatey( -5px ) );
+  }
+  &:active {
+    @include text-shadow( 0 1px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 2px 0 darken( desaturate( $color-1, 25% ), 20% ),
+                          0 2px 1px rgba( black, .3 ) );
+                          // 0 5px 3px rgba( black, .2 ) );
+    @include transform( translatey( -2px ) );
+  }
+}
+
+.icon-github {
+  margin-right: .5em;
+  @media #{ $small } {
+    margin-right: 1em;
+  }
+}
+
+.word {
+  display: block;
+  text-indent: -9999px;
+}

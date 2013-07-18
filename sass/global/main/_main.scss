@@ -1,0 +1,66 @@
+/* Main
+------------------------ */
+$img-width: $content-max-width/3;
+
+main {
+  position: relative;
+  z-index: $main-z-index;
+  float: left;
+  width: 100%;
+  background: $main-background-color;
+}
+
+section {
+  padding: .25em 0;
+  overflow: hidden;
+}
+
+.do,
+.know {
+  background-image: url( '../img/bg.png' );
+}
+
+.work,
+.check {
+  background-color: white;
+  color: black;
+  h1 {
+    color: $color-1;
+  }
+  a {
+    border-bottom: none;
+    color: $color-1;
+  }
+}
+
+.main img {
+  border-radius: $box-border-radius;
+}
+
+.left, .right {
+  display: block;
+  width: $img-width;
+  max-width: 100%;
+  height: auto;
+  margin: .45em auto;
+  @media #{ $small } {
+    max-width: 50%;
+    margin: .45em 0;
+  }
+}
+
+.left {
+  @media #{ $small } {
+    float: left;
+    margin-right: 1em;
+    margin-left: 0;
+  }
+}
+
+.right {
+  @media #{ $small } {
+    float: right;
+    margin-right: 0;
+    margin-left: 1em;
+  }
+}

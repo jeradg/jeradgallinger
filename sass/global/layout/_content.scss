@@ -1,0 +1,11 @@
+/* Content wrapper
+-------------------- */
+.content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 1em ms( -1, $side-padding );
+  @media #{ $medium } {
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+  }
+}

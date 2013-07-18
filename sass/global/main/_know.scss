@@ -1,0 +1,80 @@
+// .know {
+// }
+
+.know {
+  text-align: center;
+  h2 {
+    font-weight: normal;
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 3em;
+    &:last-of-type {
+      margin-bottom: 0;
+      @media #{ $small } {
+        margin-bottom: 1em;
+      }
+      @media #{ $medium } {
+        margin-bottom: 2em;
+      }
+    }
+  }
+}
+
+.the-knowledge {
+  @extend %grid;
+}
+
+.more-knowledge {
+  @extend %grid;
+}
+
+.great,
+.good,
+.ok,
+.learning {
+  position: relative;
+  margin-bottom: 1em;
+  .stars {
+    position: relative;
+    margin-top: .5em;
+    font-size: 2em;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 4px;
+    @include icon-FontAwesome();
+    // @media #{ $small } {
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 5.75em;
+    //   float: left;
+    //   clear: both;
+    //   span {
+    //     display: block;
+    //     position: absolute;
+    //     width: 100%;
+    //     top: 50%;
+    //     margin-top: -.5em;
+    //   }
+    // }
+  }
+  &:hover,
+  &:focus {
+    .stars {
+      @include text-shadow( 0 1px 0 darken( desaturate( white, 25% ), 20% ),
+                            0 2px 0 darken( desaturate( white, 25% ), 20% ),
+                            0 3px 0 darken( desaturate( white, 25% ), 20% ),
+                            0 4px 0 darken( desaturate( white, 25% ), 20% ),
+                            0 5px 0 darken( desaturate( white, 25% ), 20% ),
+                            0 5px 1px rgba( black, .3 ),
+                            0 5px 10px rgba( black, .4 ) );
+      @include transform( translatey( -5px ) );
+    }
+  }
+}
+
+.learning {
+  margin-bottom: 0;
+}

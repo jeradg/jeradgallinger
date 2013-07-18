@@ -1,0 +1,100 @@
+$heading-color: white;
+
+$body-font-size: 1.8em;
+$body-line-height: modular-scale( 1, 1 );
+$body-color: white;
+
+$body-link-font-family: $body-font-family;
+$link-color: $color-1;
+$link-color-hover: $color-2;
+
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.preload * {
+  @include transition( none );
+}
+
+body {
+  position: relative;
+  background-color: $body-background-color;
+  font: $body-font-size $body-font-family;
+  color: $body-color;
+  line-height: $body-line-height;
+}
+
+::selection {
+  background: rgba( $color-2, .75 ); /* Webkit */
+}
+
+::-moz-selection {
+  background: rgba( $color-2, .75 ); /* Firefox */
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+h1, h2, h3, h4 {
+  font-family: $heading-font-family;
+  color: $heading-color;
+  strong {
+    color: $color-2;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: ms( 1.5, 1em );
+  font-weight: bold;
+  @media #{ $small } and #{ $short } {
+    font-size: ms( 2, 1em );
+  }
+  @media #{ $large } and #{ $short } {
+    font-size: ms( 3, 1em );
+  }
+}
+
+h2 {
+  font-size: ms( 1, 1em );
+  font-weight: bold;
+}
+
+p,
+section ul,
+section ol {
+  margin-bottom: 1em;
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
+}
+
+section ul {
+  list-style: disc;
+  padding-left: 1em;
+}
+
+section ol {
+  list-style: decimal;
+  padding-left: 1.35em;
+}
+
+a {
+  border-bottom: 1px dotted $link-color;
+  // font-weight: bold;
+  text-decoration: none;
+  color: $link-color;
+  @include transition( color .6s ease-out, border .6s ease-out );
+  &:hover, &:focus {
+    border-bottom: 1px dotted $link-color-hover;
+    color: $link-color-hover;
+    @include transition( color .3s ease, border .3s ease );
+  }
+}
