@@ -15,8 +15,9 @@
 
 .icon-github,
 .icon-twitter {
-  display: inline-block;
-  font-size: 4em;
+  display: block;
+  font-size: 3em;
+  line-height: 1;
   @include icon-FontAwesome();
   &:hover,
   &:focus {
@@ -36,16 +37,25 @@
                           // 0 5px 3px rgba( black, .2 ) );
     @include transform( translatey( -2px ) );
   }
+  @media #{ $small } {
+    font-size: 4em;
+  }
 }
 
-.icon-github {
-  margin-right: .5em;
+.github-link,
+.twitter-link {
+  display: inline-block;
+}
+
+.github-link {
+  margin-right: 1em;
   @media #{ $small } {
-    margin-right: 1em;
+    margin-right: 4em;
   }
 }
 
 .word {
   display: block;
-  text-indent: -9999px;
+  font-weight: bold;
+  color: $color-2;
 }

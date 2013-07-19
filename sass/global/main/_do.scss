@@ -8,4 +8,9 @@
       font-size: 6em;
     }
   }
+  @media #{ $small } {
+    p {
+     font-size: ms( 1, 1em );
+   }
+  }
 }
