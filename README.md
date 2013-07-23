@@ -1,3 +1,8 @@
-# Jerad wants to work at Freshbooks!
+# This is Jerad Gallinger's website
 
-He made this site to show he has what it takes. (http://jeradgallinger.ca/freshbooks)
+If you're curious about how I made my site, here's the code.
+
+Live site: http://jeradgallinger.ca
+
+Copyright (c) 2013 Jerad Gallinger.
+Released under GPLv3. <http://www.gnu.org/licenses/gpl.html>

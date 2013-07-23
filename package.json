@@ -1,14 +1,14 @@
 {
   "name": "jerad",
   "version": "2.0",
-  "description": "ERROR: No README.md file found!",
+  "description": "Jerad Gallinger's website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jeradg/jerad.git"
+    "url": "git@github.com:jeradg/jeradgallinger.git"
   },
   "author": "Jerad Gallinger",
   "license": "none",
