@@ -1,9 +1,13 @@
 .check {
   ul {
-    margin: 1em 0 0;
-    padding: 0;
-    list-style: none;
+    margin: 1em 0 ms( -.5, 1em );
     text-align: center;
+    @media #{ $small } and #{ $short } {
+      margin: 1em 0;
+    }
+    @media #{ $large } and #{ $short } {
+      margin: 1em 0 2em;
+    }
   }
   li {
     display: inline-block;
@@ -34,7 +38,6 @@
     @include text-shadow( 0 1px 0 darken( desaturate( $color-1, 25% ), 20% ),
                           0 2px 0 darken( desaturate( $color-1, 25% ), 20% ),
                           0 2px 1px rgba( black, .3 ) );
-                          // 0 5px 3px rgba( black, .2 ) );
     @include transform( translatey( -2px ) );
   }
   @media #{ $small } {

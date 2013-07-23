@@ -67,28 +67,12 @@ h2 {
   font-weight: bold;
 }
 
-p,
-section ul,
-section ol {
+p {
   margin-bottom: 1em;
-  // &:last-child {
-  //   margin-bottom: 0;
-  // }
-}
-
-section ul {
-  list-style: disc;
-  padding-left: 1em;
-}
-
-section ol {
-  list-style: decimal;
-  padding-left: 1.35em;
 }
 
 a {
   border-bottom: 1px dotted $link-color;
-  // font-weight: bold;
   text-decoration: none;
   color: $link-color;
   @include transition( color .6s ease-out, border .6s ease-out );

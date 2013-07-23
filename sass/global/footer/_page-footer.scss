@@ -1,6 +1,5 @@
 .page-footer {
   background-color: $color-2;
-  padding-bottom: 2em;
   text-align: center;
   a {
     display: block;
@@ -15,5 +14,18 @@
       @include box-shadow( 0 3px 0 grey );
       @include transform( translatey( 2px ) );
     }
+  }
+}
+
+.copyright {
+  margin: 4em 0 0;
+  font-size: ms( -.5, 1em );
+  color: #222;
+  color: rgba( black, .3 );
+  @media #{ $small } and #{ $short } {
+    margin-top: 5em;
+  }
+  @media #{ $large } and #{ $short } {
+    margin-top: 7em;
   }
 }
