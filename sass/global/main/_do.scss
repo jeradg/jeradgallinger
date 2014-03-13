@@ -1,4 +1,12 @@
 .do {
+  a {
+    color: $link-color-alt;
+    &:hover,
+    &:focus {
+      border-color: $link-color-alt-hover;
+      color: $link-color-alt-hover;
+    }
+  }
   .icons {
     text-align: center;
     font-size: 3em;
