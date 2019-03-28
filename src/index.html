@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script type="text/javascript" src="https://use.typekit.com/<%= htmlWebpackPlugin.options.typekitId %>.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body class="preload">
+    <header class="page-header" role="banner">
+      <h1><span>Jerad</span> Gallinger</h1>
+    </header>
+
+    <section class="intro" id="intro">
+      <div class="content">
+        <div class="intro-text">
+          <p class="hi">Hi! I&rsquo;m Jerad.</p>
+          <p class="i-am">I&rsquo;m a <strong>software developer</strong> from Canada. I mostly split my time between Toronto and Mexico City.</p>
+          <p class="i-am"><em>I love responsive design, <br>clean code &amp; happy users.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <main role="main" class= "main" id="main">
+      <section class="do" id="do">
+        <div class="content">
+          <h1>What I <strong>do</strong></h1>
+          <div class="icons" aria-hidden="true">
+            &#xf121;&emsp;&#xf040;&emsp;&#xf004;
+          </div>
+          <p>
+            <strong>I code, design, and care for websites.</strong>
+          </p>
+          <p>
+            I take pride in crafting sites that are <strong>responsive, accessible, and fast</strong>.
+          </p>
+          <p>
+            I write <strong>clean code</strong> and keep up to date on <strong>modern web standards and technologies</strong>, which means high-performance sites that are easy to maintain.
+          </p>
+          <p>
+            I&rsquo;m currently a Full-Stack Developer at <a href="http://rewardops.com">RewardOps</a>.
+          </p>
+          <p>
+            In my spare time, I help maintain <a href="http://ember-cli-page-object.js.org">Ember CLI Page Object</a>, a testing addon for Ember.
+          </p>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="content">
+          <h1>My <strong>work</strong></h1>
+          <div class="rslides-wrapper">
+            <ul class="rslides" id="rslides">
+              <li><a href="http://rewardops.com" target="_blank"><img src="img/rewardops_screenshot.jpg" alt="Screenshot of the RewardOps website"><span>RewardOps</span></a></li>
+              <li><a href="http://africangrandmotherstribunal.org" target="_blank"><img src="img/tribunal_screenshot.jpg" alt="Screenshot of the African Grandmothers Tribunal website"><span>African Grandmothers Tribunal</span></a></li>
+              <li><a href="http://gordoncressy.com" target="_blank"><img src="img/cressy_screenshot.jpg" alt="Screenshot of Gordon Cressy's website"><span>Gordon Cressy</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="know" id="know">
+        <div class="content">
+          <h1>What I <strong>know</strong></h1>
+          <div class="great">
+            <div class="stars" aria-hidden="true"><span>&#xf005;&#xf005;&#xf005;</span></div>
+            <div class="skills">
+              <h2>
+                I&rsquo;m great at
+              </h2>
+                <p>
+                  JavaScript, Ember.js, Angular, Node.js, Ruby, Rails, HTML5, CSS3, SASS, responsive design
+                </p>
+              </div>
+            </div>
+            <div class="good">
+            <div class="stars" aria-hidden="true"><span>&#xf005;&#xf005;</span></div>
+              <div class="skills">
+                <h2>
+                  I&rsquo;m good at
+                </h2>
+                <p>
+                  SQL, MongoDB, accessibility standards
+                </p>
+              </div>
+            </div>
+            <div class="ok">
+            <div class="stars" aria-hidden="true"><span>&#xf005;</span></div>
+              <div class="skills">
+                <h2>
+                  I&rsquo;m OK at
+                </h2>
+                <p>
+                  Vue.js, Elixir, Phoenix, Shell scripting
+                </p>
+              </div>
+            </div>
+            <div class="learning">
+            <div class="stars" aria-hidden="true"><span>&#xf123;</span></div>
+              <div class="skills">
+                <h2>
+                  I&rsquo;d like to learn
+                </h2>
+                <p>
+                  Python, C, React.js, Go
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="check" id="check">
+        <div class="content">
+          <h1><strong>Check</strong> me out</h1>
+          <ul>
+            <li><a href="https://github.com/jeradg" class="github-link"><span class="icon-github" aria-hidden="true">&#xf09b;</span><span class="word">GitHub</span></a></li>
+            <li><a href="https://twitter.com/jeradg" class="twitter-link"><span class="icon-twitter" aria-hidden="true">&#xf099;</span><span class="word">Twitter</span></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="page-footer" id="page-footer">
+        <div class="content">
+          <h1>Like what you see?</h1>
+          <a class="button email-me" id="email-me" href="mailto:jerad@jeradgallinger.ca"><strong>Email me.</strong> I&rsquo;d love to chat.</a>
+          <p class="copyright">
+            &copy; 2019 Jerad Gallinger
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      var _gaq=[['_setAccount','<%= htmlWebpackPlugin.options.gaId %>'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>
