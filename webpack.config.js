@@ -27,6 +27,17 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]' // <-- retain original file name
+            }
+          }
+        ]
       }
     ]
   },

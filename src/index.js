@@ -1,4 +1,5 @@
 import './css/style.css';
+import './favicon.ico';
 
 const themeSwitcherEl = document.getElementById('theme-switcher-button');
 
