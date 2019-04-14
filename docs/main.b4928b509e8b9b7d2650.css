@@ -330,35 +330,22 @@ template {
   --body-font-size-small: 16px;
   --body-line-height-small: 20px;
   --body-font-size-med: 22px;
-  --body-line-height-med: 26px;
+  --body-line-height-med: 28px;
   --body-font-size-large: 28px;
-  --body-line-height-large: 32px;
+  --body-line-height-large: 36px;
 
   /* Based on Oceanic Next vim theme */
-  --dark-theme-text: #c0c5ce;
-  --dark-theme-background: #1b2b34;
-  --dark-theme-red: #ec5f67;
-  --dark-theme-green: #99c794;
-  --dark-theme-orange: #f99157;
-  --dark-theme-yellow: #fac863;
-  --dark-theme-blue: #6699cc;
-  --dark-theme-purple: #c594c5;
-  --dark-theme-cyan: #62b3b2;
-  --dark-theme-white: #ffffff;
-  --dark-theme-black: #000000;
-
-  /* Based on Oceanic Next Light vim theme */
-  --light-theme-text: #4f5b66;
-  --light-theme-background: #d8dee9;
-  --light-theme-red: #b40b11;
-  --light-theme-green: #869235;
-  --light-theme-orange: #b4713d;
-  --light-theme-yellow: #a48c32;
-  --light-theme-blue: #526f93;
-  --light-theme-purple: #896a98;
-  --light-theme-cyan: #5b9c90;
-  --light-theme-white: #ffffff;
-  --light-theme-black: #000000;
+  --theme-text: #c0c5ce;
+  --theme-background: #1b2b34;
+  --theme-red: #ec5f67;
+  --theme-green: #99c794;
+  --theme-orange: #f99157;
+  --theme-yellow: #fac863;
+  --theme-blue: #6699cc;
+  --theme-purple: #c594c5;
+  --theme-cyan: #62b3b2;
+  --theme-white: #ffffff;
+  --theme-black: #000000;
 }
 
 html {
@@ -372,14 +359,21 @@ html {
   @include transition(none);
 }
 
+.preload .page-header,
+.preload .page-main,
+.preload .page-footer {
+  visibility: hidden;
+  height: 1px;
+}
+
 body {
   max-width: 50em;
   margin: 0 auto;
-  padding: 0 1em;
-  background-color: var(--dark-theme-background);
+  padding: 1em;
+  background-color: var(--theme-background);
   font: var(--body-font-size-small) var(--body-font-family);
   line-height: var(--body-line-height-small);
-  color: var(--dark-theme-text);
+  color: var(--theme-text);
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -409,48 +403,12 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
   }
 }
 
-body.light-theme {
-  background-color: var(--light-theme-background);
-  color: var(--light-theme-text);
-}
-
-/* Inspired by https://codepen.io/barbuduweb/pen/YqVBWZ */
-@keyframes wheelHueColorDark {
-  from, to { color: var(--dark-theme-red); }
-  10%      { color: var(--dark-theme-orange); }
-  20%      { color: var(--dark-theme-yellow); }
-  30%      { color: var(--dark-theme-green); }
-  40%      { color: var(--dark-theme-cyan); }
-  50%      { color: var(--dark-theme-blue); }
-  60%      { color: var(--dark-theme-purple); }
-  70%      { color: var(--dark-theme-text); }
-  80%      { color: var(--dark-theme-white); }
-  90%      { color: var(--dark-theme-red); }
-}
-
-@keyframes wheelHueColorLight {
-  from, to { color: var(--light-theme-red); }
-  10%      { color: var(--light-theme-orange); }
-  20%      { color: var(--light-theme-yellow); }
-  30%      { color: var(--light-theme-green); }
-  40%      { color: var(--light-theme-cyan); }
-  50%      { color: var(--light-theme-blue); }
-  60%      { color: var(--light-theme-purple); }
-  70%      { color: var(--light-theme-text); }
-  80%      { color: var(--light-theme-black); }
-  90%      { color: var(--light-theme-red); }
-}
-
 .page-title {
-  color: var(--dark-theme-red);
+  color: var(--theme-red);
 }
 
 .page-title-first-name {
   display: block;
-}
-
-.light-theme .page-title {
-  color: var(--light-theme-red);
 }
 
 .page-header:hover .page-title,
@@ -458,13 +416,17 @@ body.light-theme {
   animation: wheelHueColorDark 10s infinite;
 }
 
-.light-theme .page-header:hover .page-title,
-.light-theme .page-header:focus .page-title {
-  animation: wheelHueColorLight 10s infinite;
+.terminal-line {
+  opacity: .7;
 }
 
-.terminal-command {
-  opacity: .7;
+/* Add a blinking cursor at the end of the active terminal line */
+.terminal-line-active::after {
+  display: inline-block;
+  content: " █";
+  animation: terminalCursor 1.1s linear infinite;
+  font-family: "Courier New"; /* The Adobe Fonts version of Hack has a messed up glyph for 'FULL BLOCK' (U+2588) */
+  transform: translateY(-1px);
 }
 
 ul, ol {
@@ -484,57 +446,51 @@ li:before {
 }
 
 a {
-  color: var(--dark-theme-blue);
+  color: var(--theme-blue);
 }
 
 a:visited {
-  color: var(--dark-theme-purple);
+  color: var(--theme-purple);
 }
 
 a:hover,
 a:focus,
 a:visited:hover,
 a:visited:focus {
-  color: var(--dark-theme-cyan);
-}
-
-.light-theme a {
-  color: var(--light-theme-blue);
-}
-
-.light-theme a:visited {
-  color: var(--light-theme-purple);
-}
-
-.light-theme a:hover,
-.light-theme a:focus,
-.light-theme a:visited:hover,
-.light-theme a:visited:focus {
-  color: var(--light-theme-cyan);
-}
-
-.theme-switcher {
-  text-align: right;
-}
-
-.theme-switcher-button {
-  padding: 0;
-  border: none;
-  outline: inherit;
-  background: none;
-  opacity: .8;
-  font: inherit;
-  font-style: italic;
-  color: inherit;
-  cursor: pointer;
-}
-
-.theme-switcher-button:hover,
-.theme-switcher-button:focus {
-  opacity: 1;
+  color: var(--theme-cyan);
 }
 
 .divider {
   opacity: .5;
+}
+
+.terminal-line {
+  margin: 1em 0;
+}
+
+@keyframes terminalCursor {
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+}
+
+/* Inspired by https://codepen.io/barbuduweb/pen/YqVBWZ */
+@keyframes wheelHueColorDark {
+  from, to { color: var(--theme-red); }
+  10%      { color: var(--theme-orange); }
+  20%      { color: var(--theme-yellow); }
+  30%      { color: var(--theme-green); }
+  40%      { color: var(--theme-cyan); }
+  50%      { color: var(--theme-blue); }
+  60%      { color: var(--theme-purple); }
+  70%      { color: var(--theme-text); }
+  80%      { color: var(--theme-white); }
+  90%      { color: var(--theme-red); }
 }
 

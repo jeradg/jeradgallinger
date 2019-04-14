@@ -23,21 +23,15 @@
   </head>
 
   <body class="preload">
-    <p class="theme-switcher" aria-hidden="true">
-      <button class="theme-switcher-button" id="theme-switcher-button">
-        Change themes
-      </button>
-    </p>
-
-    <p class="terminal-command" id="terminal-command-cat" aria-hidden="true">
-      ~ $ cat jerad.txt
-    </p>
-
-    <div class="divider" aria-hidden="true">
-      -------------------------
+    <div class="terminal-line" id="terminal-line-intro" aria-hidden="true">
+      ~ $ <span class="terminal-command-cat" id="terminal-line-intro-">cat jerad.txt</span>
     </div>
 
     <header class="page-header" role="banner">
+      <div class="divider" aria-hidden="true">
+        -------------------------
+      </div>
+
       <h1 class="page-title">
         <span class="page-title-first-name">
           Jerad
@@ -51,11 +45,11 @@
       <p><em>I love APIs, responsive design, clean code &amp; happy users.</em></p>
     </header>
 
-    <div class="divider" aria-hidden="true">
-      -------------------------
-    </div>
+    <main class="page-main" role="main">
+      <div class="divider" aria-hidden="true">
+        -------------------------
+      </div>
 
-    <main role="main">
       <section>
         <h1><span aria-hidden="true">~</span> What I do <span aria-hidden="true">~</span></h1>
 
@@ -123,29 +117,29 @@
       <div class="divider" aria-hidden="true">
         -------------------------
       </div>
-
-      <footer>
-        <h1><span aria-hidden="true">~</span> Like what you see? <span aria-hidden="true">~</span></h1>
-
-        <p>
-          <a href="mailto:jerad@jeradgallinger.ca"><strong>Email me.</strong> I’d love to chat.</a>
-        </p>
-
-        <div class="divider" aria-hidden="true">
-          -------------------------
-        </div>
-
-        <p>
-          &copy; <%= htmlWebpackPlugin.options.currentYear %> Jerad Gallinger
-        </p>
-      </footer>
     </main>
 
-    <br>
+    <footer class="page-footer">
+      <h1><span aria-hidden="true">~</span> Like what you see? <span aria-hidden="true">~</span></h1>
 
-    <p class="terminal-command" aria-hidden="true">
-      ~ $
-    </p>
+      <p>
+        <a href="mailto:jerad@jeradgallinger.ca"><strong>Email me.</strong> I’d love to chat.</a>
+      </p>
+
+      <div class="divider" aria-hidden="true">
+        -------------------------
+      </div>
+
+      <p>
+        &copy; <%= htmlWebpackPlugin.options.currentYear %> Jerad Gallinger
+      </p>
+
+      <br>
+
+      <div class="terminal-line terminal-line-active" aria-hidden="true">
+        ~ $
+      </div>
+    </footer>
 
     <script>
       var _gaq=[['_setAccount','<%= htmlWebpackPlugin.options.gaId %>'],['_trackPageview']];
