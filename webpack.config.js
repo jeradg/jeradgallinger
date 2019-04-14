@@ -1,6 +1,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const postcssNormalize = require('postcss-normalize');
 
 module.exports = {
   mode: 'production',
@@ -16,7 +17,15 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                postcssNormalize()
+              ]
+            }
+          }
         ]
       }
     ]
@@ -32,8 +41,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       title: 'Jerad Gallinger | Software Developer',
-      description: 'Jerad Gallinger is a web developer from Toronto, Canada. He likes Ruby, JavaScript, Rails, Node.js, Angular, Ember.js, Vue.js, and more. This is his website.',
-      typekitId: 'bfa5wua',
+      currentYear: (new Date()).getFullYear(),
+      description: 'Jerad Gallinger is a software developer from Toronto, Canada. He likes API development (Ruby on Rails, Node.js), modern JavaScript frameworks (Ember.js, Angular, Vue.js), TDD, Agile, and making happy users. This is his website.',
+      typekitId: 'iub1hrx',
       gaId: 'UA-28558937-1'
     })
   ]
