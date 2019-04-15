@@ -1,7 +1,9 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postcssNormalize = require('postcss-normalize');
+const TerserJSPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,6 +11,9 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: __dirname + '/dist'
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   module: {
     rules: [
