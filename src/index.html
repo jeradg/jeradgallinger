@@ -12,8 +12,13 @@
 
     <noscript>
       <style type="text/css">
-        .reveal {
-          opacity: 1 !important;
+        /* If JS is disabled, make sure content is visible */
+        .loading .page-header,
+        .loading .page-main,
+        .loading .page-footer {
+          position: static !important;
+          width: auto !important;
+          height: auto !important;
         }
       </style>
     </noscript>
@@ -22,9 +27,9 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
 
-  <body class="preload">
-    <div class="terminal-line" id="terminal-line-intro" aria-hidden="true">
-      ~ $ <span class="terminal-command-cat" id="terminal-line-intro-">cat jerad.txt</span>
+  <body class="loading">
+    <div class="terminal-line terminal-line-active" id="terminal-loading-line" aria-hidden="true">
+      <span class="terminal-prompt">~ $&nbsp;</span><span class="terminal-loading-command hidden" id="terminal-loading-command">cat jerad.txt</span>
     </div>
 
     <header class="page-header" role="banner">
@@ -136,8 +141,8 @@
 
       <br>
 
-      <div class="terminal-line terminal-line-active" aria-hidden="true">
-        ~ $
+      <div class="terminal-line terminal-line-active terminal-line-active-flashing" aria-hidden="true">
+        <span class="terminal-prompt">~ $&nbsp;</span>
       </div>
     </footer>
 
@@ -146,10 +151,6 @@
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src='//www.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-
-    <script>
-      const bodyEl = document.getElementsByTagName('body')[0].classList.remove('preload');
     </script>
   </body>
 </html>

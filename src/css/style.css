@@ -34,11 +34,21 @@ html {
   @include transition(none);
 }
 
-.preload .page-header,
-.preload .page-main,
-.preload .page-footer {
-  visibility: hidden;
+/* Visually hide while allowing to be read by screenreaders and robots */
+.loading .page-header,
+.loading .page-main,
+.loading .page-footer {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
   height: 1px;
+  overflow: hidden;
+}
+
+/* Revealed character by character using JS */
+.hidden {
+  display: none;
 }
 
 body {
@@ -79,6 +89,8 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 }
 
 .page-title {
+  font-size: 2em;
+  line-height: 1;
   color: var(--theme-red);
 }
 
@@ -92,16 +104,31 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 }
 
 .terminal-line {
+  margin: 1em 0;
   opacity: .7;
 }
 
-/* Add a blinking cursor at the end of the active terminal line */
+.terminal-line-active {
+  opacity: 1;
+}
+
+/* Add a cursor at the end of a terminal line */
 .terminal-line-active::after {
   display: inline-block;
-  content: " █";
-  animation: terminalCursor 1.1s linear infinite;
-  font-family: "Courier New"; /* The Adobe Fonts version of Hack has a messed up glyph for 'FULL BLOCK' (U+2588) */
+  content: "█";
+  margin-left: -0.6em;
   transform: translateY(-1px);
+  font-family: "Courier New"; /* The Adobe Fonts version of Hack has a messed up glyph for 'FULL BLOCK' (U+2588) */
+  font-size: .96em;
+}
+
+/* Make the cursor at the end of a terminal line blink */
+.terminal-line-active-flashing::after {
+  animation: terminalCursor 1.1s linear infinite;
+}
+
+.terminal-prompt {
+  color: var(--theme-green);
 }
 
 ul, ol {
@@ -137,10 +164,6 @@ a:visited:focus {
 
 .divider {
   opacity: .5;
-}
-
-.terminal-line {
-  margin: 1em 0;
 }
 
 @keyframes terminalCursor {
