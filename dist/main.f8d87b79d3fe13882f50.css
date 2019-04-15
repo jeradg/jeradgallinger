@@ -395,6 +395,26 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
   font-size: inherit;
 }
 
+hr {
+  height: var(--body-line-height-small);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+hr::after {
+  display: inline-block;
+  opacity: .5;
+  content: "----------";
+}
+
+@media (min-width: 300px) {
+  hr::after {
+    content: "--------------------";
+  }
+}
+
 @media (min-width: 960px) {
   body {
     font-size: var(--body-font-size-med);
@@ -403,6 +423,14 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 
   h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: var(--body-line-height-med) 0;
+  }
+
+  hr {
+    height: var(--body-line-height-med);
+  }
+
+  hr::after {
+    content: "-------------------------";
   }
 }
 
@@ -414,6 +442,14 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 
   h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: var(--body-line-height-large) 0;
+  }
+
+  hr {
+    height: var(--body-line-height-large);
+  }
+
+  hr::after {
+    content: "-----------------------------------";
   }
 }
 
@@ -489,10 +525,6 @@ a:focus,
 a:visited:hover,
 a:visited:focus {
   color: var(--theme-cyan);
-}
-
-.divider {
-  opacity: .5;
 }
 
 @keyframes terminalCursor {
