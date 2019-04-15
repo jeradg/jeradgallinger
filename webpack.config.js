@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].js',
-    path: __dirname + '/docs'
+    path: __dirname + '/dist'
   },
   module: {
     rules: [
@@ -51,6 +51,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      filename: __dirname + '/index.html',
       title: 'Jerad Gallinger | Software Developer',
       currentYear: (new Date()).getFullYear(),
       description: 'Jerad Gallinger is a software developer from Toronto, Canada. He likes API development (Ruby on Rails, Node.js), modern JavaScript frameworks (Ember.js, Angular, Vue.js), TDD, Agile, and making happy users. This is his website.',
