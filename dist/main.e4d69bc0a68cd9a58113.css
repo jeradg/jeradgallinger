@@ -371,6 +371,10 @@ html {
   overflow: hidden;
 }
 
+.loading .terminal-loading-line {
+  opacity: 1;
+}
+
 /* Revealed character by character using JS */
 .hidden {
   display: none;
@@ -440,11 +444,11 @@ h1, h2, h3, h4, h5, h6, p, ol, ul {
 /* Add a cursor at the end of a terminal line */
 .terminal-line-active::after {
   display: inline-block;
-  content: "█";
-  margin-left: -0.6em;
-  transform: translateY(-1px);
-  font-family: "Courier New"; /* The Adobe Fonts version of Hack has a messed up glyph for 'FULL BLOCK' (U+2588) */
-  font-size: .96em;
+  position: absolute;
+  width: 0.6em;
+  height: 1.2em;
+  content: "";
+  background-color: var(--theme-text);
 }
 
 /* Make the cursor at the end of a terminal line blink */
